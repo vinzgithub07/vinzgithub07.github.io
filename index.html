@@ -3,99 +3,193 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hồ Sơ Cá Nhân</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://unpkg.com/feather-icons"></script>
-    <script type="importmap">
-    {
-        "imports": {
-            "@google/generative-ai": "https://esm.run/@google/generative-ai"
+    <title>Hồ Sơ Cá Nhân Nguyễn Văn Vin</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+            background-color: #f4f4f4;
         }
-    }
-    </script>
+        .container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .header {
+            text-align: center;
+            border-bottom: 2px solid #333;
+            padding-bottom: 20px;
+            margin-bottom: 20px;
+        }
+        .header img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #4CAF50;
+        }
+        .section-title {
+            color: #2c3e50;
+            border-bottom: 2px solid #4CAF50;
+            padding-bottom: 10px;
+            margin-top: 30px;
+        }
+        .info-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        .info-table td, .info-table th {
+            border: 1px solid #ddd;
+            padding: 10px;
+        }
+        .social-links {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+        .social-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            padding: 10px;
+            background-color: #f1f1f1;
+            border-radius: 5px;
+        }
+        .contact-form {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 5px;
+        }
+        .contact-form input, 
+        .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .submit-btn {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .skills-section {
+            display: flex;
+            justify-content: space-between;
+        }
+        .skills-column {
+            width: 48%;
+        }
+    </style>
 </head>
-<body class="bg-gray-100 font-roboto">
-    <!-- Main Content -->
-    <div class="container mx-auto px-4 pt-20 flex flex-col md:flex-row">
-        <!-- AI Chat Popup -->
-        <div id="aiChatPopup" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden items-center justify-center">
-            <div class="bg-white rounded-lg w-full md:w-[600px] max-w-xl flex flex-col mx-auto h-[80vh] overflow-hidden shadow-lg">
-                <!-- Popup Header -->
-                <div class="flex justify-between items-center p-4 border-b">
-                    <h2 class="text-xl font-bold">Hỏi Với AI</h2>
-                    <button id="closePopup" class="text-gray-500 hover:text-gray-700 focus:outline-none">&times;</button>
+<body>
+    <div class="container">
+        <header class="header">
+            <img src="https://avatars.githubusercontent.com/u/126393227?v=4" alt="Ảnh đại diện">
+            <h1>Nguyễn Văn Vin</h1>
+            <p>Học sinh THPT | Đam mê công nghệ và học tập</p>
+        </header>
+
+        <section>
+            <h2 class="section-title">Thông Tin Cá Nhân</h2>
+            <table class="info-table">
+                <tr>
+                    <td><strong>Họ và Tên:</strong></td>
+                    <td>Nguyễn Văn Vin</td>
+                </tr>
+                <tr>
+                    <td><strong>Ngày Sinh:</strong></td>
+                    <td>Chưa xác định</td>
+                </tr>
+                <tr>
+                    <td><strong>Lớp:</strong></td>
+                    <td>Chưa xác định</td>
+                </tr>
+                <tr>
+                    <td><strong>Trường:</strong></td>
+                    <td>Chưa xác định</td>
+                </tr>
+            </table>
+        </section>
+
+        <section>
+            <h2 class="section-title">Sở Thích Học Tập</h2>
+            <div class="skills-section">
+                <div class="skills-column">
+                    <h3>Học Thuật</h3>
+                    <ul>
+                        <li>Toán học</li>
+                        <li>Khoa học</li>
+                        <li>Tin học</li>
+                        <li>Ngoại ngữ</li>
+                    </ul>
                 </div>
-
-                <!-- Chat Messages Area -->
-                <div id="chatMessages" class="flex-grow overflow-y-auto p-4 space-y-4 bg-gray-50"></div>
-
-                <!-- Chat Input -->
-                <div class="p-4 border-t bg-white flex items-center space-x-2">
-                    <input 
-                        type="text" 
-                        id="chatInput" 
-                        placeholder="Nhập câu hỏi của bạn..." 
-                        class="flex-grow bg-gray-100 rounded-full px-4 py-[10px] focus:outline-none focus:ring focus:ring-blue"
-                    >
-                    <button id="sendMessage" class="bg-blue-500 text-white rounded-full p-[10px] hover:bg-blue-dark transition duration-[150ms] ease-in-out focus:outline-none flex items-center justify-center w-[40px] h-[40px]">&rarr;</button>
+                <div class="skills-column">
+                    <h3>Ngoại Khóa</h3>
+                    <ul>
+                        <li>Chơi game</li>
+                        <li>Lập trình</li>
+                        <li>Đọc sách</li>
+                        <li>Thể thao</li>
+                    </ul>
                 </div>
             </div>
-        </div>
+        </section>
+
+        <section>
+            <h2 class="section-title">Kỹ Năng</h2>
+            <table class="info-table">
+                <tr>
+                    <th>Lĩnh Vực</th>
+                    <th>Mức Độ</th>
+                </tr>
+                <tr>
+                    <td>Tin Học</td>
+                    <td>Trung Bình</td>
+                </tr>
+                <tr>
+                    <td>Lập Trình</td>
+                    <td>Cơ Bản</td>
+                </tr>
+                <tr>
+                    <td>Ngoại Ngữ</td>
+                    <td>Đang Học</td>
+                </tr>
+            </table>
+        </section>
+
+        <section>
+            <h2 class="section-title">Kết Nối Mạng Xã Hội</h2>
+            <div class="social-links">
+                <a href="https://www.facebook.com/vinzcyunnnnnnnnnn?mibextid=ZbWKwL" target="_blank">Facebook</a>
+                <a href="https://t.me/@wynriu" target="_blank">Telegram</a>
+                <a href="https://github.com/vinzcyun" target="_blank">GitHub</a>
+            </div>
+        </section>
+
+        <section>
+            <h2 class="section-title">Liên Hệ</h2>
+            <form class="contact-form" action="https://formspree.io/f/kesyrou@gmail.com" method="POST">
+                <input type="text" name="name" placeholder="Họ và Tên" required>
+                <input type="email" name="email" placeholder="Email của bạn" required>
+                <textarea name="message" placeholder="Tin Nhắn" required></textarea>
+                <input type="hidden" name="_subject" value="Tin Nhắn Mới Từ Trang Cá Nhân">
+                <button type="submit" class="submit-btn">Gửi Tin Nhắn</button>
+            </form>
+        </section>
+
+        <footer style="text-align: center; margin-top: 20px; color: #777;">
+            <p>Được hỗ trợ bởi Google Cloud Platform</p>
+            <p>© 2024 Nguyễn Văn Vin. Bản quyền được bảo lưu.</p>
+        </footer>
     </div>
-
-    <script type='module'>
-        import { GoogleGenerativeAI } from "@google/generative-ai";
-
-        const API_KEY = "YOUR_API_KEY"; // Thay thế bằng API key hợp lệ
-        const genAI = new GoogleGenerativeAI(API_KEY);
-        const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
-
-        const aiChatPopup = document.getElementById('aiChatPopup');
-        const closePopupBtn = document.getElementById('closePopup');
-        const chatInput = document.getElementById('chatInput');
-        const sendMessageBtn = document.getElementById('sendMessage');
-        const chatMessages = document.getElementById('chatMessages');
-
-        closePopupBtn.addEventListener('click', () => {
-            aiChatPopup.classList.add('hidden');
-        });
-
-        function addMessage(text, type) {
-            const messageDiv = document.createElement('div');
-            messageDiv.classList.add(
-                'p-[10px]', 
-                'rounded-lg', 
-                type === 'user' ? 'bg-blue-light self-end' : 'bg-gray-light self-start'
-            );
-            messageDiv.textContent = text;
-            chatMessages.appendChild(messageDiv);
-            chatMessages.scrollTop = chatMessages.scrollHeight;
-        }
-
-        async function sendMessage() {
-            const message = chatInput.value.trim();
-            if (message) {
-                addMessage(message, 'user');
-                chatInput.value = '';
-
-                try {
-                    const result = await model.generateContent(message);
-                    const responseText = result.response.text; // Lấy văn bản phản hồi
-                    addMessage(responseText, 'ai');
-                } catch (error) {
-                    console.error("Lỗi:", error);
-                    addMessage('Xin lỗi, đã xảy ra lỗi. Vui lòng thử lại.', 'ai');
-                }
-            }
-        }
-
-        sendMessageBtn.addEventListener('click', sendMessage);
-        chatInput.addEventListener('keypress', (e) => {
-            if (e.key === 'Enter') {
-                sendMessage();
-            }
-        });
-    </script>
 </body>
-                                                </html>
+                </html>
