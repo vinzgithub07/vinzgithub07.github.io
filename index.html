@@ -3,193 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hồ Sơ Cá Nhân Nguyễn Văn Vin</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-            line-height: 1.6;
-            background-color: #f4f4f4;
-        }
-        .container {
-            background-color: white;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        }
-        .header {
-            text-align: center;
-            border-bottom: 2px solid #333;
-            padding-bottom: 20px;
-            margin-bottom: 20px;
-        }
-        .header img {
-            width: 200px;
-            height: 200px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 4px solid #4CAF50;
-        }
-        .section-title {
-            color: #2c3e50;
-            border-bottom: 2px solid #4CAF50;
-            padding-bottom: 10px;
-            margin-top: 30px;
-        }
-        .info-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-bottom: 20px;
-        }
-        .info-table td, .info-table th {
-            border: 1px solid #ddd;
-            padding: 10px;
-        }
-        .social-links {
-            display: flex;
-            justify-content: space-around;
-            margin-top: 20px;
-        }
-        .social-links a {
-            text-decoration: none;
-            color: #333;
-            font-weight: bold;
-            padding: 10px;
-            background-color: #f1f1f1;
-            border-radius: 5px;
-        }
-        .contact-form {
-            background-color: #f9f9f9;
-            padding: 20px;
-            border-radius: 5px;
-        }
-        .contact-form input, 
-        .contact-form textarea {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 10px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-        }
-        .submit-btn {
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-        .skills-section {
-            display: flex;
-            justify-content: space-between;
-        }
-        .skills-column {
-            width: 48%;
-        }
-    </style>
+    <title>Trang Cá Nhân</title>
 </head>
 <body>
-    <div class="container">
-        <header class="header">
-            <img src="https://avatars.githubusercontent.com/u/126393227?v=4" alt="Ảnh đại diện">
-            <h1>Nguyễn Văn Vin</h1>
-            <p>Học sinh THPT | Đam mê công nghệ và học tập</p>
-        </header>
+    <header>
+        <h1>Giới Thiệu Về Bản Thân</h1>
+        <nav>
+            <input type="text" id="question-input" placeholder="Hỏi tôi điều gì...">
+            <button id="submit-btn">Gửi</button>
+        </nav>
+        <p>AI Chat được hỗ trợ bởi Google Cloud Platform</p>
+    </header>
 
-        <section>
-            <h2 class="section-title">Thông Tin Cá Nhân</h2>
-            <table class="info-table">
-                <tr>
-                    <td><strong>Họ và Tên:</strong></td>
-                    <td>Nguyễn Văn Vin</td>
-                </tr>
-                <tr>
-                    <td><strong>Ngày Sinh:</strong></td>
-                    <td>Chưa xác định</td>
-                </tr>
-                <tr>
-                    <td><strong>Lớp:</strong></td>
-                    <td>Chưa xác định</td>
-                </tr>
-                <tr>
-                    <td><strong>Trường:</strong></td>
-                    <td>Chưa xác định</td>
-                </tr>
-            </table>
-        </section>
+    <section>
+        <h2>Thông Tin Cá Nhân</h2>
+        <img src="https://avatars.githubusercontent.com/u/126393227?v=4" alt="Hình ảnh của tôi" width="300">
+        <p>Tên: [Tên của bạn]</p>
+        <p>Giới thiệu: [Mô tả ngắn về bản thân]</p>
+    </section>
 
-        <section>
-            <h2 class="section-title">Sở Thích Học Tập</h2>
-            <div class="skills-section">
-                <div class="skills-column">
-                    <h3>Học Thuật</h3>
-                    <ul>
-                        <li>Toán học</li>
-                        <li>Khoa học</li>
-                        <li>Tin học</li>
-                        <li>Ngoại ngữ</li>
-                    </ul>
-                </div>
-                <div class="skills-column">
-                    <h3>Ngoại Khóa</h3>
-                    <ul>
-                        <li>Chơi game</li>
-                        <li>Lập trình</li>
-                        <li>Đọc sách</li>
-                        <li>Thể thao</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
+    <section>
+        <h2>Mạng Xã Hội</h2>
+        <ul>
+            <li><a href="https://www.facebook.com/vinzcyunnnnnnnnnn?mibextid=ZbWKwL">Facebook</a></li>
+            <li><a href="https://t.me/@wynriu">Telegram</a></li>
+            <li><a href="https://github.com/vinzcyun">GitHub</a></li>
+        </ul>
+    </section>
 
-        <section>
-            <h2 class="section-title">Kỹ Năng</h2>
-            <table class="info-table">
-                <tr>
-                    <th>Lĩnh Vực</th>
-                    <th>Mức Độ</th>
-                </tr>
-                <tr>
-                    <td>Tin Học</td>
-                    <td>Trung Bình</td>
-                </tr>
-                <tr>
-                    <td>Lập Trình</td>
-                    <td>Cơ Bản</td>
-                </tr>
-                <tr>
-                    <td>Ngoại Ngữ</td>
-                    <td>Đang Học</td>
-                </tr>
-            </table>
-        </section>
+    <section>
+        <h2>Video Giới Thiệu</h2>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/your-video-id" frameborder="0" allowfullscreen></iframe>
+    </section>
 
-        <section>
-            <h2 class="section-title">Kết Nối Mạng Xã Hội</h2>
-            <div class="social-links">
-                <a href="https://www.facebook.com/vinzcyunnnnnnnnnn?mibextid=ZbWKwL" target="_blank">Facebook</a>
-                <a href="https://t.me/@wynriu" target="_blank">Telegram</a>
-                <a href="https://github.com/vinzcyun" target="_blank">GitHub</a>
-            </div>
-        </section>
+    <script type="importmap">
+    {
+        "imports": {
+            "@google/generative-ai": "https://esm.run/@google/generative-ai"
+        }
+    }
+    </script>
 
-        <section>
-            <h2 class="section-title">Liên Hệ</h2>
-            <form class="contact-form" action="https://formspree.io/f/kesyrou@gmail.com" method="POST">
-                <input type="text" name="name" placeholder="Họ và Tên" required>
-                <input type="email" name="email" placeholder="Email của bạn" required>
-                <textarea name="message" placeholder="Tin Nhắn" required></textarea>
-                <input type="hidden" name="_subject" value="Tin Nhắn Mới Từ Trang Cá Nhân">
-                <button type="submit" class="submit-btn">Gửi Tin Nhắn</button>
-            </form>
-        </section>
+    <script type="module">
+        import { GoogleGenerativeAI } from "@google/generative-ai";
 
-        <footer style="text-align: center; margin-top: 20px; color: #777;">
-            <p>Được hỗ trợ bởi Google Cloud Platform</p>
-            <p>© 2024 Nguyễn Văn Vin. Bản quyền được bảo lưu.</p>
-        </footer>
-    </div>
+        const API_KEY = "AIzaSyC-V3EfjLTDmJR5CTymMHDnqRp2VlrLX5E";
+        const genAI = new GoogleGenerativeAI(API_KEY);
+        const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
+
+        const questionInput = document.getElementById('question-input');
+        const submitBtn = document.getElementById('submit-btn');
+
+        submitBtn.addEventListener('click', async () => {
+            const question = questionInput.value.trim();
+            if (!question) return alert("Vui lòng nhập câu hỏi.");
+            
+            try {
+                const result = await model.generateContent(question);
+                const response = await result.response;
+                alert(await response.text());
+            } catch (error) {
+                console.error("Lỗi:", error);
+                alert("Đã xảy ra lỗi. Vui lòng thử lại.");
+            }
+        });
+    </script>
 </body>
-                </html>
+            </html>
